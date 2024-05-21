@@ -132,7 +132,7 @@ class CustomTextStyles {
   static TextStyle get bodyXSmallGrotesk_12x4 => bodyHostGrotesk.copyWith(
       fontSize: 12.sp,
       fontWeight: FontWeight.w400,
-      height: getLineHeight(lineHeight: 160, fontSize: 12),
+      height: getLineHeight(lineHeight: 19.2, fontSize: 12),
       letterSpacing: -0.25);
 
   ///

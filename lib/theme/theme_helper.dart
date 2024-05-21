@@ -12,6 +12,7 @@ class ThemeHelper {
       fontFamily: 'Grotesk',
       useMaterial3: true,
       visualDensity: VisualDensity.standard,
+      // Text Theme
       textTheme: TextTheme(
         bodyLarge: TextStyle(
           color: appTheme.neutral100,
@@ -112,6 +113,7 @@ class ColorSchemes {
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   Color get transparent => Colors.transparent;
+  Color get barrierColor => const Color(0XFF475467).withOpacity(0.10);
   Color get primary => const Color(0XFF2ECC71);
   Color get secondary => const Color(0XFFFFD700);
   Color get textPrimary => PrimaryColors().neutral100;
