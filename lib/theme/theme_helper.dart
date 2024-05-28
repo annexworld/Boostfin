@@ -22,7 +22,7 @@ class ThemeHelper {
       // Elevated Button
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(328.w, 56.h),
+          minimumSize: Size(328.w, 48.h),
           foregroundColor: PrimaryColors().primary90,
           backgroundColor: PrimaryColors().primary,
           disabledBackgroundColor: PrimaryColors().neutral20,
