@@ -1,13 +1,17 @@
+import 'package:boostfin/app_config.dart';
 import 'package:boostfin/routes.dart';
+import 'package:boostfin/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:boostfin/theme/theme_helper.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:boostfin/ui_layer/_page.dart';
+// import 'package:boostfin/ui_layer/ui_layer.export.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
+  initializeGetitServiceLocator(AppConfigs(
+      'https://boostfin-api.onrender.com/api', EnvironmentConfig.dev, 'v1'));
 
   runApp(
     const ProviderScope(

@@ -1,5 +1,7 @@
+import 'package:boostfin/routes.dart';
 import 'package:boostfin/theme/custom_text_style.dart';
 import 'package:boostfin/theme/theme_helper.dart';
+import 'package:boostfin/ui_layer/onboarding/notifiers/signup_state_one.notifier.dart';
 import 'package:boostfin/ui_layer/widgets/custom_buttons/custom_elevated_btn.widget.dart';
 import 'package:boostfin/ui_layer/widgets/custom_text_field/custom_text_field.widget.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +32,7 @@ class VerifyDetailsPage extends ConsumerWidget {
                       letterSpacing: -0.5),
                 ),
                 Text(
-                  'Enter the code sent to d.....e@icloud.com',
+                  'Enter the code sent to ${ref.watch(userSignupStateNotifierProvider).emailController!.text}',
                   style: CustomTextStyles.bodyLargeGrotesk_16x5.copyWith(
                       color: appTheme.neutral60,
                       height: getLineHeight(lineHeight: 24, fontSize: 16),
@@ -40,11 +42,11 @@ class VerifyDetailsPage extends ConsumerWidget {
                 Form(
                   child: Column(
                     children: [
-                      CustomTextFormField(
-                        label: 'Email',
-                        hintText: 'name@mail.com',
+                      CustomTextFormField.otp(
+                        label: 'Enter code',
+                        hintText: 'code',
                       ),
-                      16.verticalSpace,
+                      4.verticalSpace,
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,7 +91,11 @@ class VerifyDetailsPage extends ConsumerWidget {
                       ),
                       40.verticalSpace,
                       CustomElevatedButton.withIcon(
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context)
+                              .push("${Routes.signupPage.navigate}"
+                                  "${Routes.createPasswordPage.navigate}");
+                        },
                         isDisabled: false,
                         text: 'Verify Account',
                       )

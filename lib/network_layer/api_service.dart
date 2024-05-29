@@ -37,18 +37,17 @@ class ApiService {
     debugPrint('initializeInterceptors()');
 
     _dio!.interceptors
-      ..add(RefreshTokenInterceptor())
-      ..add(RequestAuthentication())
-      // ..add(RequestAuthentication())
-      // ..add(RequestAuthentication())
-      ..add((PrettyDioLogger(
-          requestHeader: kDebugMode,
-          requestBody: kDebugMode,
-          responseBody: kDebugMode,
-          responseHeader: false,
-          error: kDebugMode,
-          compact: kDebugMode,
-          maxWidth: 90)));
+        // ..add(RefreshTokenInterceptor())
+        // ..add(RequestAuthentication())
+        .add((PrettyDioLogger(
+      requestHeader: kDebugMode,
+      requestBody: kDebugMode,
+      responseBody: kDebugMode,
+      responseHeader: false,
+      error: kDebugMode,
+      compact: kDebugMode,
+      maxWidth: 90,
+    )));
   }
 
 //
@@ -168,7 +167,7 @@ class ApiService {
   Future<Response> call(Options options) async {
     try {
       Response response =
-          await _dio!.get(Endpoints.refreshToken, options: options);
+          await _dio!.get(Endpoints.resetPassword, options: options);
       return response;
     } on DioException catch (exp) {
       return errorHandler(exp);

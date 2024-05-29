@@ -1,12 +1,18 @@
+import 'package:boostfin/ui_layer/onboarding/bnv_validation.page.dart';
+import 'package:boostfin/ui_layer/onboarding/create_password.page.dart';
+import 'package:boostfin/ui_layer/splash_screen/splash_screen_one.page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+export 'package:go_router/go_router.dart';
 
 //
-import 'package:boostfin/ui_layer/export.dart';
+import 'package:boostfin/ui_layer/ui_layer.export.dart';
 
 enum Routes {
   //
   root(path: '/'),
+  splashScreenPage1(path: 'splash_screen_page_one'),
+  //
   signupPage(path: 'signup_page'),
   otpPage(path: 'otp_page'),
   signinPage(path: 'signin_page'),
@@ -14,6 +20,8 @@ enum Routes {
   loanPage(path: '/loan_page'),
   menuPage(path: '/menu_page'),
   profilePage(path: '/profile_page'),
+  createPasswordPage(path: 'create_password_page'),
+  registerBVNPage(path: 'bvn_validation_Page'),
   verifyAccountPage(path: 'verify_account_page');
 
   const Routes({required this.path});
@@ -47,6 +55,12 @@ class AppRoutes {
         builder: (context, state) => const SplashScreenPage(),
         routes: <RouteBase>[
           GoRoute(
+            path: Routes.splashScreenPage1.path,
+            builder: (context, state) {
+              return const SplashScreenPage1();
+            },
+          ),
+          GoRoute(
             path: Routes.signupPage.path,
             builder: (context, state) {
               return SignupPage();
@@ -55,7 +69,19 @@ class AppRoutes {
               GoRoute(
                 path: Routes.verifyAccountPage.path,
                 builder: (context, state) {
-                  return VerifyDetailsPage();
+                  return const VerifyDetailsPage();
+                },
+              ),
+              GoRoute(
+                path: Routes.createPasswordPage.path,
+                builder: (context, state) {
+                  return const CreateUserPasswordPage();
+                },
+              ),
+              GoRoute(
+                path: Routes.registerBVNPage.path,
+                builder: (context, state) {
+                  return const ProvideBVNPage();
                 },
               ),
             ],

@@ -19,7 +19,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     super.initState();
 
     Future.delayed(
-        3.seconds, () => GoRouter.of(context).go(Routes.signupPage.navigate));
+        3.seconds, () => GoRouter.of(context).go(Routes.splashScreenPage1.navigate));
   }
 
   @override

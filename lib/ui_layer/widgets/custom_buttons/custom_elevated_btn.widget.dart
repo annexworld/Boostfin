@@ -11,6 +11,7 @@ final class CustomElevatedButton extends BaseButton {
       {super.key,
       this.isloading,
       this.textColor,
+      this.icon,
       EdgeInsets? margin,
       VoidCallback? onPressed,
       ButtonStyle? buttonStyle,
@@ -37,6 +38,7 @@ final class CustomElevatedButton extends BaseButton {
       {super.key,
       this.isloading,
       this.textColor,
+      this.icon,
       EdgeInsets? margin,
       VoidCallback? onPressed,
       ButtonStyle? buttonStyle,
@@ -62,6 +64,7 @@ final class CustomElevatedButton extends BaseButton {
   late bool? isloading;
   final Color? textColor;
   final bool hasIcon;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +98,7 @@ final class CustomElevatedButton extends BaseButton {
                       8.horizontalSpace,
                       SizedBox(
                         child: CustomImageView(
-                          imagePath: ImageConstant.svgButtonIcon,
+                          imagePath: icon ?? ImageConstant.svgButtonIcon,
                           color: isDisabled ?? false
                               ? appTheme.neutral30
                               : appTheme.white,

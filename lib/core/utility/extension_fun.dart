@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:boostfin/core/utility/validator_functions.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
@@ -27,6 +28,17 @@ extension PhoneNumberExtension on String {
     return this.replaceFirst(RegExp(r'^0'), '');
   }
 }
+
+extension NairaFormatter on double {
+  String get nairaFormat {
+    NumberFormat formatter = NumberFormat.currency(symbol: "₦");
+    // Format the double value to a currency string
+    String formattedValue = formatter.format(this);
+    return formattedValue;
+  }
+}
+
+extension MaskEmailText on String {}
 
 extension StringExtensions on String {
   static bool isNull(dynamic value) => value == null;

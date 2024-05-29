@@ -20,9 +20,10 @@ class ThemeHelper {
         ),
       ),
       // Elevated Button
+      scaffoldBackgroundColor: Colors.white,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(328.w, 48.h),
+          minimumSize: Size(328.w, 56.h),
           foregroundColor: PrimaryColors().primary90,
           backgroundColor: PrimaryColors().primary,
           disabledBackgroundColor: PrimaryColors().neutral20,
@@ -61,7 +62,7 @@ class ThemeHelper {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6.r),
-          // borderSide: BorderSide(color: appTheme.redA70001),
+          borderSide: BorderSide(color: appTheme.textDanger, width: 1.7.r),
         ),
         errorStyle: TextStyle(
           fontFamily: 'Poppins',
