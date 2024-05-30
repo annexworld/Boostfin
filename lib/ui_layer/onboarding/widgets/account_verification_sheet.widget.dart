@@ -214,7 +214,8 @@ class AccountVerificationBottomSheet extends ConsumerWidget {
                   isDisabled: stateRef.loadingState,
                   isloading: stateRef.loadingState,
                   onPressed: () {
-                    readRef.verifyAccount(email, phoneNumber, context: context);
+                    GoRouter.of(context).push("${Routes.signupPage.navigate}""${Routes.verifyAccountPage.navigate}");
+                    // readRef.verifyAccount(email, phoneNumber, context: context);
                   },
                   text: 'Send Code'),
             ],

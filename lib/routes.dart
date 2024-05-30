@@ -1,5 +1,6 @@
 import 'package:boostfin/ui_layer/onboarding/bnv_validation.page.dart';
 import 'package:boostfin/ui_layer/onboarding/create_password.page.dart';
+import 'package:boostfin/ui_layer/onboarding/signin.page.dart';
 import 'package:boostfin/ui_layer/splash_screen/splash_screen_one.page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -20,6 +21,7 @@ enum Routes {
   loanPage(path: '/loan_page'),
   menuPage(path: '/menu_page'),
   profilePage(path: '/profile_page'),
+  signinPpppage(path: 'knwjfnsjjsfbn'),
   createPasswordPage(path: 'create_password_page'),
   registerBVNPage(path: 'bvn_validation_Page'),
   verifyAccountPage(path: 'verify_account_page');
@@ -66,6 +68,32 @@ class AppRoutes {
               return SignupPage();
             },
             routes: [
+                GoRoute(
+            path: Routes.signinPage.path,
+            builder: (context, state) {
+              return  const SignInPage();
+            },
+            routes: [
+              GoRoute(
+                path: Routes.verifyAccountPage.path,
+                builder: (context, state) {
+                  return const VerifyDetailsPage();
+                },
+              ),
+              GoRoute(
+                path: Routes.createPasswordPage.path,
+                builder: (context, state) {
+                  return const CreateUserPasswordPage();
+                },
+              ),
+              GoRoute(
+                path: Routes.registerBVNPage.path,
+                builder: (context, state) {
+                  return const ProvideBVNPage();
+                },
+              ),
+            ],
+          ),
               GoRoute(
                 path: Routes.verifyAccountPage.path,
                 builder: (context, state) {

@@ -134,6 +134,7 @@ class PrimaryColors {
   Color get bgSuccess => const Color(0XFFE6FFF3).withOpacity(0.07);
   Color get bgWarning => const Color(0XFFFFF5E6);
   Color get bgDanger => const Color(0XFFFFE6E6);
+
   Color get bgInfo => const Color(0XFFE6F6FF);
   Color get overlay => const Color(0XFFFCFCFD);
 
@@ -172,4 +173,7 @@ class PrimaryColors {
   Color get neutral80 => const Color(0XFF344054);
   Color get neutral90 => const Color(0XFF1D2939);
   Color get neutral100 => const Color(0XFF101323);
+// Borderside
+ 
+   Color get expansionWarning => const Color(0XFFFFF5E6); Color get outlineWarning => const Color(0XFFFAAD14);
 }

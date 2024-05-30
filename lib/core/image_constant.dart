@@ -23,4 +23,5 @@ class ImageConstant {
   static String svgEmailIconOutline = '$sgvPath/email-icon-outline.svg';
   static String svgPhoneIcon = '$sgvPath/phone-icon.svg';
   static String svgHidePassword = '$sgvPath/hide_password.svg';
+  static String svgWarning = '$sgvPath/warning.svg';
 }

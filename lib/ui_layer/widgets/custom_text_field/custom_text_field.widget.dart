@@ -4,6 +4,7 @@ import 'package:boostfin/core/widget_extension.dart';
 import 'package:boostfin/theme/theme_helper.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 enum TextFormType {
@@ -308,7 +309,7 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconColor: null,
         suffixIcon: formType == TextFormType.password
             ? SizedBox(
-                child: CustomImageView(
+                child: CustomImageView(fit: BoxFit.scaleDown,
                   imagePath: ImageConstant.svgHidePassword,
                 ),
               )

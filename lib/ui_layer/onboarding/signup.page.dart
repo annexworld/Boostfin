@@ -88,6 +88,7 @@ class SignupPage extends ConsumerWidget {
               isDisabled: stateRef.loadingState,
               isloading: stateRef.loadingState,
               onPressed: () async {
+// GoRouter.of(context).push("${Routes.signupPage.navigate}""${Routes.signinPage.navigate}");
                 if (readRef.validateSignupForm(context)) {
                   // Open verify email modal
                   showModalBottomSheet(
@@ -101,6 +102,9 @@ class SignupPage extends ConsumerWidget {
                         ));
                       });
                 }
+                GoRouter.of(context).push("${Routes.signupPage.navigate}""${Routes.signinPage.navigate}");
+
+
               },
             ),
             16.verticalSpace,
