@@ -92,27 +92,25 @@ class SignInPage extends ConsumerWidget {
                 ],
               ),
             ),
-          10.verticalSpace,
+            10.verticalSpace,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  
                   height: 20.h,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(width: 25.w,
+                      SizedBox(
+                        width: 25.w,
                         child: Transform.scale(
                           scale: 0.7,
                           child: Checkbox(
                               value: true,
                               onChanged: (condition) {},
                               checkColor: appTheme.white,
-                              fillColor: WidgetStateProperty.resolveWith<Color>(
-                                  (Set<WidgetState> states) {
-                                return appTheme.primary60;
-                              })),
+                              fillColor: MaterialStateProperty.all<Color>(
+                                  appTheme.primary60)),
                         ),
                       ),
                       Text(
@@ -121,7 +119,6 @@ class SignInPage extends ConsumerWidget {
                             height: getLineHeight(
                                 lineHeight: 22.h, fontSize: 14.sp)),
                       ),
-                              
                     ],
                   ),
                 ),
