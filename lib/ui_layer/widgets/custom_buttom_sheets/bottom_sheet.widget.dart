@@ -27,7 +27,7 @@ class _CustomBottomModalSheetState extends State<CustomBottomModalSheet> {
               ),
             ),
             width: double.infinity,
-            height: 474.h,
+            height: widget.height?.h ?? 474.h,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,

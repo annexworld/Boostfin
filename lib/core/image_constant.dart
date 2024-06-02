@@ -19,6 +19,9 @@ class ImageConstant {
   static String svgRadioButtonOutlineIcon =
       '$sgvPath/radio-button-outline-icon.svg';
   static String svgRadioButtonIcon = '$sgvPath/radio-button-icon.svg';
+  static String svgPasswordCheckValid =
+      '$sgvPath/password_check_valid_icon.svg';
+  static String svgPasswordCheck = '$sgvPath/password_check_icon.svg';
   static String svgEmailIcon = '$sgvPath/email-icon.svg';
   static String svgEmailIconOutline = '$sgvPath/email-icon-outline.svg';
   static String svgPhoneIcon = '$sgvPath/phone-icon.svg';

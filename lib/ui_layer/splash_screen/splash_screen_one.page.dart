@@ -24,7 +24,9 @@ class SplashScreenPage1 extends ConsumerWidget {
           children: [
             42.verticalSpace,
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).go(Routes.signupPage.navigate);
+              },
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -115,21 +117,26 @@ class SplashScreenPage1 extends ConsumerWidget {
               ),
             ),
             16.verticalSpace,
-            RichText(
-              text: TextSpan(
-                children: [
-                  const TextSpan(text: 'Already have an account?'),
-                  TextSpan(
-                    text: ' Log In',
-                    style: CustomTextStyles.bodySmallGrotesk_14x4.copyWith(
-                      color: appTheme.primary,
-                      height: getLineHeight(lineHeight: 22.4, fontSize: 14),
+            GestureDetector(
+              onTap: () {
+                GoRouter.of(context).push(Routes.signinPage.navigate);
+              },
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    const TextSpan(text: 'Already have an account?'),
+                    TextSpan(
+                      text: ' Log In',
+                      style: CustomTextStyles.bodySmallGrotesk_14x4.copyWith(
+                        color: appTheme.primary,
+                        height: getLineHeight(lineHeight: 22.4, fontSize: 14),
+                      ),
                     ),
+                  ],
+                  style: CustomTextStyles.bodySmallGrotesk_14x4.copyWith(
+                    color: appTheme.neutral60,
+                    height: getLineHeight(lineHeight: 22.4, fontSize: 14),
                   ),
-                ],
-                style: CustomTextStyles.bodySmallGrotesk_14x4.copyWith(
-                  color: appTheme.neutral60,
-                  height: getLineHeight(lineHeight: 22.4, fontSize: 14),
                 ),
               ),
             ),

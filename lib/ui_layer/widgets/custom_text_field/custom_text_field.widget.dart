@@ -84,7 +84,7 @@ class CustomTextFormField extends StatelessWidget {
         super(
           key: key,
         );
-  CustomTextFormField.numberOnly({
+  CustomTextFormField. numberOnly({
     Key? key,
     this.alignment,
     this.decoration,
@@ -309,7 +309,8 @@ class CustomTextFormField extends StatelessWidget {
         prefixIconColor: null,
         suffixIcon: formType == TextFormType.password
             ? SizedBox(
-                child: CustomImageView(fit: BoxFit.scaleDown,
+                child: CustomImageView(
+                  fit: BoxFit.scaleDown,
                   imagePath: ImageConstant.svgHidePassword,
                 ),
               )

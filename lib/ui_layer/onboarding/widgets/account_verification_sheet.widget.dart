@@ -1,5 +1,6 @@
 import 'package:boostfin/core/custom_image_view.dart';
 import 'package:boostfin/core/image_constant.dart';
+import 'package:boostfin/core/utility/extension_fun.dart';
 import 'package:boostfin/routes.dart';
 import 'package:boostfin/theme/custom_text_style.dart';
 import 'package:boostfin/theme/theme_helper.dart';
@@ -124,7 +125,7 @@ class AccountVerificationBottomSheet extends ConsumerWidget {
                               ),
                               4.verticalSpace,
                               Text(
-                                email,
+                                email.maskEmail,
                                 style: CustomTextStyles.bodySmallGrotesk_14x4
                                     .copyWith(
                                         height: getLineHeight(
@@ -214,7 +215,8 @@ class AccountVerificationBottomSheet extends ConsumerWidget {
                   isDisabled: stateRef.loadingState,
                   isloading: stateRef.loadingState,
                   onPressed: () {
-                    GoRouter.of(context).push("${Routes.signupPage.navigate}""${Routes.verifyAccountPage.navigate}");
+                    GoRouter.of(context).push("${Routes.signupPage.navigate}"
+                        "${Routes.verifyAccountPage.navigate}");
                     // readRef.verifyAccount(email, phoneNumber, context: context);
                   },
                   text: 'Send Code'),

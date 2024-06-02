@@ -35,7 +35,6 @@ final class CustomElevatedButton extends BaseButton {
         );
   //
 
-  
   CustomElevatedButton.withIcon(
       {super.key,
       this.isloading,

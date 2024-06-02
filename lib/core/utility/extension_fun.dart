@@ -38,7 +38,20 @@ extension NairaFormatter on double {
   }
 }
 
-extension MaskEmailText on String {}
+extension MaskEmailText on String {
+  String get maskEmail {
+    int nameLength = this.indexOf('@');
+    if (nameLength <= 2) {
+      // If the username is too short to mask meaningfully, return the original email
+      return this;
+    }
+    String username = this.substring(0, nameLength);
+    String maskedUsername = username[0] +
+        '*' * (username.length - 2) +
+        username[username.length - 1];
+    return maskedUsername + this.substring(nameLength);
+  }
+}
 
 extension StringExtensions on String {
   static bool isNull(dynamic value) => value == null;

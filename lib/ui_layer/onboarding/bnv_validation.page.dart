@@ -48,7 +48,7 @@ class ProvideBVNPage extends ConsumerWidget {
               key: null,
               child: Column(
                 children: [
-                  CustomTextFormField(
+                  CustomTextFormField.numberOnly(
                     label: 'BVN',
                     hintText: 'Enter your BVN',
                   ),
@@ -67,7 +67,6 @@ class ProvideBVNPage extends ConsumerWidget {
                               width: 1, color: appTheme.outlineWarning),
                         )),
                     child: ExpansionTile(
-                      
                       backgroundColor: appTheme.expansionWarning,
                       collapsedBackgroundColor: appTheme.bgWarning,
                       title: Row(
@@ -87,7 +86,8 @@ class ProvideBVNPage extends ConsumerWidget {
                       ),
                       children: [
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.0.w,vertical: 0.h),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16.0.w, vertical: 0.h),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [

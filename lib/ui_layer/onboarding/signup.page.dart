@@ -25,7 +25,7 @@ class SignupPage extends ConsumerWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.r),
         child: Column(
           children: [
-            // distance from stop of the display/screen
+            // distance from top of the display/screen
             86.verticalSpace,
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -87,8 +87,7 @@ class SignupPage extends ConsumerWidget {
               text: 'Continue',
               isDisabled: stateRef.loadingState,
               isloading: stateRef.loadingState,
-              onPressed: () async {
-// GoRouter.of(context).push("${Routes.signupPage.navigate}""${Routes.signinPage.navigate}");
+              onPressed: () {
                 if (readRef.validateSignupForm(context)) {
                   // Open verify email modal
                   showModalBottomSheet(
@@ -102,14 +101,15 @@ class SignupPage extends ConsumerWidget {
                         ));
                       });
                 }
-                GoRouter.of(context).push("${Routes.signupPage.navigate}""${Routes.signinPage.navigate}");
-
-
+                // GoRouter.of(context).push("${Routes.signupPage.navigate}"
+                //     "${Routes.verifyAccountPage.navigate}");
               },
             ),
             16.verticalSpace,
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(Routes.signinPage.navigate);
+              },
               child: RichText(
                 text: TextSpan(
                     children: [
