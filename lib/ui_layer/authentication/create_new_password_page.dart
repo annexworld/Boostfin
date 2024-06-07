@@ -4,6 +4,7 @@ import 'package:boostfin/routes.dart';
 import 'package:boostfin/theme/custom_text_style.dart';
 import 'package:boostfin/theme/theme_helper.dart';
 import 'package:boostfin/ui_layer/authentication/notifier/create_user_password_state.notifier.dart';
+import 'package:boostfin/ui_layer/widgets/custom_alert.widget.dart';
 import 'package:boostfin/ui_layer/widgets/custom_buttons/custom_elevated_btn.widget.dart';
 import 'package:boostfin/ui_layer/widgets/custom_text_field/custom_text_field.widget.dart';
 import 'package:flutter/material.dart';
@@ -197,6 +198,87 @@ class CreateNewPasswordPage extends ConsumerWidget {
                   ],
                 ),
               ],
+            ),
+            24.verticalSpace,
+            CustomElevatedButton.withIcon(
+              text: 'Reset Password',
+              onPressed: () {
+                showDialog(
+                    barrierColor: appTheme.transparent,
+                    barrierDismissible: true,
+                    context: context,
+                    builder: (context) {
+                      return Dialog(
+                        backgroundColor: appTheme.transparent,
+                        elevation: 0.0,
+                        child: CustomAlertDialog(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 72.w,
+                                height: 72.h,
+                                decoration: BoxDecoration(
+                                  color: appTheme.primary10,
+                                  shape: BoxShape.circle,
+                                ),
+                                margin: EdgeInsets.only(bottom: 24.r),
+                                child: CustomImageView(
+                                  imagePath: ImageConstant.svgSuccessConfetti,
+                                  fit: BoxFit.scaleDown,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 8.0.r),
+                                child: Text(
+                                  'Password Reset',
+                                  style: CustomTextStyles.h5Grotesk_24x6
+                                      .copyWith(
+                                          fontWeight: FontWeight.w500,
+                                          letterSpacing: -.25.sp,
+                                          height: getLineHeight(
+                                              lineHeight: 28.8, fontSize: 24)),
+                                ),
+                              ),
+                              Text(
+                                'Your password has been successfully reset. Click below to login magically.',
+                                style: CustomTextStyles.bodyLargeGrotesk_16x4
+                                    .copyWith(
+                                  color: appTheme.neutral60,
+                                  letterSpacing: -.5.sp,
+                                  height: getLineHeight(
+                                      lineHeight: 25.6, fontSize: 24),
+                                ),
+                              ),
+                              32.verticalSpace,
+                              CustomElevatedButton.withIcon(
+                                  width: double.infinity,
+                                  onPressed: () {
+                                    GoRouter.of(context)
+                                        .go(Routes.signinPage.navigate);
+                                  },
+                                  text: 'Continue'),
+                              8.verticalSpace,
+                              CustomElevatedButton(
+                                buttonStyle: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(0),
+                                    backgroundColor: MaterialStateProperty.all(
+                                        appTheme.transparent)),
+                                textColor: appTheme.primary,
+                                width: double.infinity,
+                                onPressed: () {
+                                  GoRouter.of(context)
+                                      .go(Routes.signinPage.navigate);
+                                },
+                                text: "Back to Login",
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    });
+              },
             ),
           ],
         ),

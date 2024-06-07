@@ -6,3 +6,5 @@ export 'package:boostfin/ui_layer/onboarding/bnv_validation.page.dart';
 export 'package:boostfin/ui_layer/onboarding/create_password.page.dart';
 export 'package:boostfin/ui_layer/authentication/signin.page.dart';
 export 'package:boostfin/ui_layer/splash_screen/splash_screen_one.page.dart';
+export 'package:boostfin/ui_layer/authentication/create_new_password_page.dart';
+export 'package:boostfin/ui_layer/dashboard/dashboard_home.page.dart';

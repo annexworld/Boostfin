@@ -84,7 +84,7 @@ class CustomTextStyles {
   static TextStyle get h5Grotesk_24x6 => bodyHostGrotesk.copyWith(
       fontSize: 24.sp,
       fontWeight: FontWeight.w600,
-      height: getLineHeight(lineHeight: 120, fontSize: 24),
+      height: getLineHeight(lineHeight: 28.8, fontSize: 24),
       letterSpacing: -0.5);
 
   ///

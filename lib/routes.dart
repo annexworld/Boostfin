@@ -1,4 +1,3 @@
-import 'package:boostfin/ui_layer/authentication/create_new_password_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -122,9 +121,9 @@ class AppRoutes {
               GoRoute(
                 // parentNavigatorKey: _rootNavigatorKey,
                 path: Routes.homePage.path,
-                // name: AppRoute.homePage.path,
+                name: Routes.homePage.name,
                 builder: (BuildContext context, GoRouterState state) {
-                  return const Scaffold();
+                  return const DashboardHomePage();
                 },
                 routes: [],
               ),

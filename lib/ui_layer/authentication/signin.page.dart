@@ -157,19 +157,7 @@ class SignInPage extends ConsumerWidget {
                 isDisabled: stateRef.loadingState,
                 isloading: stateRef.loadingState,
                 onPressed: () {
-                  // if (readRef.validateSignupForm(context)) {
-                  //   // Open password reset modal
-                  //   showModalBottomSheet(
-                  //       context: context,
-                  //       builder: (BuildContext context) {
-                  //         return CustomBottomModalSheet(
-                  //             child: AccountVerificationBottomSheet(
-                  //           email: stateRef.emailController!.text,
-                  //           phoneNumber:
-                  //               stateRef.textInputFormatter!.getUnmaskedText(),
-                  //         ));
-                  //       });
-                  // }
+                  GoRouter.of(context).pushNamed(Routes.homePage.name);
                 },
               ),
               180.verticalSpace,

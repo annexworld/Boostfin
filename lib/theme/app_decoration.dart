@@ -15,8 +15,9 @@ class AppDecoration {
   static BoxDecoration get fillPrimary => BoxDecoration(
         color: theme.colorScheme.primary,
       );
-  static BoxDecoration get fillWhiteA => BoxDecoration(
+  static BoxDecoration get fillWhite => BoxDecoration(
         color: appTheme.white,
+        borderRadius: BorderRadius.circular(6.r),
       );
 // Outline decorations
   static BoxDecoration get outlineGray => BoxDecoration(
