@@ -4,8 +4,8 @@ import 'package:boostfin/core/widget_extension.dart';
 import 'package:boostfin/theme/theme_helper.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 enum TextFormType {
   text,
@@ -84,7 +84,7 @@ class CustomTextFormField extends StatelessWidget {
         super(
           key: key,
         );
-  CustomTextFormField. numberOnly({
+  CustomTextFormField.numberOnly({
     Key? key,
     this.alignment,
     this.decoration,

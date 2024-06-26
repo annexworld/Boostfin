@@ -2,6 +2,7 @@ import 'package:boostfin/core/custom_image_view.dart';
 import 'package:boostfin/core/image_constant.dart';
 import 'package:boostfin/theme/custom_text_style.dart';
 import 'package:boostfin/theme/theme_helper.dart';
+import 'package:boostfin/ui_layer/authentication/notifier/signin_state.notifier.dart';
 import 'package:boostfin/ui_layer/authentication/widget/forgot_password_sheet.widget.dart';
 import 'package:boostfin/ui_layer/onboarding/notifiers/signup_state_one.notifier.dart';
 import 'package:boostfin/ui_layer/onboarding/widgets/account_verification_sheet.widget.dart';
@@ -18,8 +19,7 @@ class SignInPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final stateRef = ref.watch(userSignupStateNotifierProvider);
-    final readRef = ref.read(userSignupStateNotifierProvider.notifier);
+    final stateRef = ref.watch(signinStateNotifierProvider);
 
     return Scaffold(
       body: SafeArea(
@@ -79,20 +79,20 @@ class SignInPage extends ConsumerWidget {
               ),
               32.verticalSpace,
               Form(
-                // key: stateRef.formKey,
+                key: stateRef.formKey,
                 child: Column(
                   children: [
                     CustomTextFormField.numberOnly(
-                      inputFormatters: [stateRef.textInputFormatter!],
-                      controller: stateRef.phoneNoController,
-                      validator: stateRef.validatePhoneNoFormInput,
+                      inputFormatters: [stateRef.textInputFormatter],
+                      controller: stateRef.phoneControlller,
+                      validator: stateRef.phoneNumberValidator,
                       label: 'Phone number',
                       hintText: '0800 000 0000',
                     ),
                     16.verticalSpace,
                     CustomTextFormField.password(
-                      controller: stateRef.emailController,
-                      validator: stateRef.validateEmailFormInput,
+                      controller: stateRef.passwordController,
+                      validator: stateRef.passwordValidator,
                       label: 'Password',
                       hintText: '',
                     ),
@@ -145,7 +145,7 @@ class SignInPage extends ConsumerWidget {
                     child: Text('Forgot password',
                         style: CustomTextStyles.bodyXSmallGrotesk_12x5.copyWith(
                             color: appTheme.primary60,
-                            height: getLineHeight(
+                          height: getLineHeight(
                                 lineHeight: 22.h, fontSize: 12.sp))),
                   ),
                 ],
@@ -154,10 +154,12 @@ class SignInPage extends ConsumerWidget {
               CustomElevatedButton(
                 width: double.infinity,
                 text: 'Log in With Face ID',
-                isDisabled: stateRef.loadingState,
-                isloading: stateRef.loadingState,
+                isDisabled: stateRef.isloading,
+                isloading: stateRef.isloading,
                 onPressed: () {
-                  GoRouter.of(context).pushNamed(Routes.homePage.name);
+                  ref
+                      .read(signinStateNotifierProvider.notifier)
+                      .validateCredentials(context);
                 },
               ),
               180.verticalSpace,

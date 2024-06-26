@@ -8,7 +8,7 @@ import 'package:boostfin/ui_layer/widgets/custom_alert.widget.dart';
 import 'package:boostfin/ui_layer/widgets/custom_buttons/custom_elevated_btn.widget.dart';
 import 'package:boostfin/ui_layer/widgets/custom_text_field/custom_text_field.widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+// import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
