@@ -41,14 +41,14 @@ class DashboardNavigationScreen extends ConsumerWidget {
       title: "Home",
     ),
     BottomMenuModel(
-      icon: ImageConstant.svgLoansTab,
-      activeIcon: ImageConstant.svgLoansTab,
-      title: "Loans",
-    ),
-    BottomMenuModel(
       icon: ImageConstant.svgMenuTab,
       activeIcon: ImageConstant.svgMenuTab,
       title: "Menu",
+    ),
+    BottomMenuModel(
+      icon: ImageConstant.svgLoansTab,
+      activeIcon: ImageConstant.svgLoansTab,
+      title: "Loans",
     ),
     BottomMenuModel(
       icon: ImageConstant.svgProfileTab,

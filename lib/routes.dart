@@ -1,12 +1,9 @@
-import 'package:boostfin/ui_layer/onboarding/bnv_validation.page.dart';
-import 'package:boostfin/ui_layer/onboarding/create_password.page.dart';
-import 'package:boostfin/ui_layer/splash_screen/splash_screen_one.page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-export 'package:go_router/go_router.dart';
 
 //
 import 'package:boostfin/ui_layer/ui_layer.export.dart';
+export 'package:go_router/go_router.dart';
 
 enum Routes {
   //
@@ -21,6 +18,7 @@ enum Routes {
   menuPage(path: '/menu_page'),
   profilePage(path: '/profile_page'),
   createPasswordPage(path: 'create_password_page'),
+  createNewPasswordPage(path: 'create_new_password_page'),
   registerBVNPage(path: 'bvn_validation_Page'),
   verifyAccountPage(path: 'verify_account_page');
 
@@ -87,6 +85,20 @@ class AppRoutes {
             ],
           ),
           GoRoute(
+            path: Routes.signinPage.path,
+            builder: (context, state) {
+              return const SignInPage();
+            },
+            routes: [
+              GoRoute(
+                path: Routes.createNewPasswordPage.path,
+                builder: (context, state) {
+                  return const CreateNewPasswordPage();
+                },
+              ),
+            ],
+          ),
+          GoRoute(
               path: Routes.otpPage.path,
               builder: (context, state) {
                 return const Scaffold();
@@ -109,9 +121,9 @@ class AppRoutes {
               GoRoute(
                 // parentNavigatorKey: _rootNavigatorKey,
                 path: Routes.homePage.path,
-                // name: AppRoute.homePage.path,
+                name: Routes.homePage.name,
                 builder: (BuildContext context, GoRouterState state) {
-                  return const Scaffold();
+                  return const DashboardHomePage();
                 },
                 routes: [],
               ),

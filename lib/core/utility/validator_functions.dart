@@ -81,7 +81,7 @@ final class Validators {
     return isInputStringValid;
   }
 
-  /// Checks if string is phone number
+  /// Checks if string is phone number is valid number
   bool isValidPhone(
     String? inputString, {
     bool isRequired = false,

@@ -1,3 +1,4 @@
+import 'package:boostfin/core/utility/extension_fun.dart';
 import 'package:boostfin/routes.dart';
 import 'package:boostfin/theme/custom_text_style.dart';
 import 'package:boostfin/theme/theme_helper.dart';
@@ -32,7 +33,7 @@ class VerifyDetailsPage extends ConsumerWidget {
                       letterSpacing: -0.5),
                 ),
                 Text(
-                  'Enter the code sent to ${ref.watch(userSignupStateNotifierProvider).emailController!.text}',
+                  'Enter the code sent to ${ref.watch(userSignupStateNotifierProvider).emailController!.text.maskEmail}',
                   style: CustomTextStyles.bodyLargeGrotesk_16x5.copyWith(
                       color: appTheme.neutral60,
                       height: getLineHeight(lineHeight: 24, fontSize: 16),

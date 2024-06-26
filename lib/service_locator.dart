@@ -1,5 +1,4 @@
 import 'package:boostfin/app_config.dart';
-import 'package:boostfin/domain_layer/usecases/onboarding_usecases/signup_stage_one.usecase.dart';
 import 'package:boostfin/network_layer/api_service.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -26,4 +25,5 @@ void initializeGetitServiceLocator(AppConfigs config) {
 
   /// usecases
   getit.registerFactory<SignupStageOneUsecase>(() => SignupStageOneUsecase());
+  getit.registerFactory<SigninUsecase>(() => SigninUsecase());
 }
